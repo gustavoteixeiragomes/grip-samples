@@ -233,8 +233,8 @@ void planningTab::onButtonPlan(wxCommandEvent & _evt) {
   
   // Deactivate collision checking between the feet and the ground during planning
   dynamics::SkeletonDynamics* ground = mWorld->getSkeleton("ground");
-  mWorld->getCollisionHandle()->getCollisionChecker()->deactivatePair(mRobot->getNode("Body_LAR"), ground->getNode(1));
-  mWorld->getCollisionHandle()->getCollisionChecker()->deactivatePair(mRobot->getNode("Body_RAR"), ground->getNode(1));
+  //mWorld->getCollisionHandle()->getCollisionChecker()->deactivatePair(mRobot->getNode("Body_LAR"), ground->getNode(1));
+  //mWorld->getCollisionHandle()->getCollisionChecker()->deactivatePair(mRobot->getNode("Body_RAR"), ground->getNode(1));
   
   // Define PD controller gains
   Eigen::VectorXd kI = 100.0 * Eigen::VectorXd::Ones(mRobot->getNumDofs());
@@ -274,8 +274,8 @@ void planningTab::onButtonPlan(wxCommandEvent & _evt) {
   }
   
   // Reactivate collision of feet with floor
-  mWorld->getCollisionHandle()->getCollisionChecker()->activatePair(mRobot->getNode("Body_LAR"), ground->getNode(1));
-  mWorld->getCollisionHandle()->getCollisionChecker()->activatePair(mRobot->getNode("Body_RAR"), ground->getNode(1));
+  //mWorld->getCollisionHandle()->getCollisionChecker()->activatePair(mRobot->getNode("Body_LAR"), ground->getNode(1));
+  //mWorld->getCollisionHandle()->getCollisionChecker()->activatePair(mRobot->getNode("Body_RAR"), ground->getNode(1));
 }
 
 // Local Variables:
